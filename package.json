@@ -1,0 +1,19 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "A Discord Bot for fun",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rzeema/discord-bot.git"
+  },
+  "author": "rzeema",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rzeema/discord-bot/issues"
+  },
+  "homepage": "https://github.com/rzeema/discord-bot#readme"
+}
