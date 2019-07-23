@@ -12,7 +12,7 @@ client.on('message', message => {
         new Discord.RichEmbed()
         	.setTitle('Help Menu')
         	.setColor(0xFF0000)
-        	.setDescription('!help\n!kpop\n!shocking\n!autist\n!yike');
+        	.setDescription('!help\n!ELP\n!kpop\n!shocking\n!autist\n!yike');
 		message.channel.send(embed);
 	}
 	else if (message.content.startsWith(`${prefix}shocking`)) {
@@ -31,11 +31,6 @@ client.on('message', message => {
 		else {
 			message.channel.send(attachment);
 		}
-	}
-
-	else if (message.content === `${prefix}autist`) {
-		const attachment = new Discord.Attachment('./media/autist.jpg');
-		message.channel.send(attachment);
 	}
 
 	else if (message.content === `${prefix}yike`) {
@@ -70,7 +65,7 @@ client.on('message', message => {
 		message.channel.send(attachment);
 	}
 
-	else if (message.content.includes('thinkpad')) {
+	else if (message.content.includes('thinkpad') || message.content.includes('nut')) {
 		message.react('😍')
 			.then(() => message.react('🍆'))
 			.then(() => message.react('💦'))
@@ -92,6 +87,27 @@ client.on('message', message => {
 		/* now files is an Array of the name of the files in the folder and you can pick a random name inside of that array */
 		const chosenFile = files[Math.floor(Math.random() * files.length)];
 		const attachment = new Discord.Attachment('./media/no gf/' + chosenFile);
+		message.channel.send(attachment);
+	}
+
+	else if (message.content === `${prefix}autist`) {
+		const fs = require('fs');
+		const files = fs.readdirSync('./media/autist/');
+		/* now files is an Array of the name of the files in the folder and you can pick a random name inside of that array */
+		const chosenFile = files[Math.floor(Math.random() * files.length)];
+		const attachment = new Discord.Attachment('./media/autist/' + chosenFile);
+		message.channel.send(attachment);
+	}
+	else if (message.content === `${prefix}ELP`) {
+		const attachment = new Discord.Attachment('./media/elp.MOV');
+		message.channel.send(attachment);
+	}
+	else if (message.content.includes('rage')) {
+		const attachment = new Discord.Attachment('./media/rage.gif');
+		message.channel.send(attachment);
+	}
+	else if (message.content === ':dab:') {
+		const attachment = new Discord.Attachment('./media/dab.jpg');
 		message.channel.send(attachment);
 	}
 
