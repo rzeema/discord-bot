@@ -65,26 +65,31 @@ client.on('message', message => {
 		message.channel.send(attachment);
 	}
 
-	else if (message.content.includes('thinkpad') || message.content.includes('nut')) {
+	else if (
+		message.content.includes('thinkpad') || message.content.includes('nut')) {
 		message.react('😍')
 			.then(() => message.react('🍆'))
 			.then(() => message.react('💦'))
 			.catch(() => console.error('One of the emojis failed to react.'));
 	}
 
-	else if ((message.content.includes('im') && message.content.includes('big')) || (message.content.includes('you') && message.content.includes('small'))) {
+	else if (
+		(message.content.includes('im') && message.content.includes('big')) ||
+      (message.content.includes('you') && message.content.includes('small'))) {
 		const attachment = new Discord.Attachment('./media/tall.jpg');
 		message.channel.send(attachment);
 	}
 
 	else if (message.content.includes('im') && message.content.includes('sad')) {
-		message.channel.send('https://open.spotify.com/track/6rPO02ozF3bM7NnOV4h6s2');
+		message.channel.send(
+			'https://open.spotify.com/track/6rPO02ozF3bM7NnOV4h6s2');
 	}
 
 	else if (message.content.includes('no') && message.content.includes('gf')) {
 		const fs = require('fs');
 		const files = fs.readdirSync('./media/no gf/');
-		/* now files is an Array of the name of the files in the folder and you can pick a random name inside of that array */
+		/* now files is an Array of the name of the files in the folder and you can
+     * pick a random name inside of that array */
 		const chosenFile = files[Math.floor(Math.random() * files.length)];
 		const attachment = new Discord.Attachment('./media/no gf/' + chosenFile);
 		message.channel.send(attachment);
@@ -93,7 +98,8 @@ client.on('message', message => {
 	else if (message.content === `${prefix}autist`) {
 		const fs = require('fs');
 		const files = fs.readdirSync('./media/autist/');
-		/* now files is an Array of the name of the files in the folder and you can pick a random name inside of that array */
+		/* now files is an Array of the name of the files in the folder and you can
+     * pick a random name inside of that array */
 		const chosenFile = files[Math.floor(Math.random() * files.length)];
 		const attachment = new Discord.Attachment('./media/autist/' + chosenFile);
 		message.channel.send(attachment);
@@ -109,6 +115,9 @@ client.on('message', message => {
 	else if (message.content === ':dab:') {
 		const attachment = new Discord.Attachment('./media/dab.jpg');
 		message.channel.send(attachment);
+	}
+	else if (message.content.includes('https://')) {
+		message.channel.send('Bro! You just posted cringe! You\'re going to lose subscriber!');
 	}
 
 	// else if(message.author.id == 185537418601037824) {
