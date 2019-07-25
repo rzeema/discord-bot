@@ -7,6 +7,10 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
+	if (message.author.bot) return;
+	const args = message.content.slice(prefix.length).split(/ +/);
+	const command = args.shift().toLowerCase();
+
 	if (message.content === `${prefix}help`) {
 		const embed =
         new Discord.RichEmbed()
@@ -15,7 +19,7 @@ client.on('message', message => {
         	.setDescription('!help\n!ELP\n!kpop\n!shocking\n!autist\n!yike');
 		message.channel.send(embed);
 	}
-	else if (message.content.startsWith(`${prefix}shocking`)) {
+	else if (command.startsWith(`${prefix}shocking`)) {
 		const user = message.mentions.users.first();
 		const attachment = new Discord.Attachment('./media/reddit.jpg');
 
