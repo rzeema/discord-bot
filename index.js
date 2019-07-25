@@ -50,3 +50,5 @@ client.on('message', message => {
 });
 
 client.login(token_B);
+
+console.log('test remote origin');
